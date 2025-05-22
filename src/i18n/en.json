@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "about": "About",
+    "stack": "Stack",
+    "projects": "Projects"
+  },
+  "content": {
+    "bio": {
+      "title": "About Me",
+      "description": "Backend developer with 1+ year of experience..."
+    },
+    "python": {
+      "title": "Python",
+      "description": "Used for Telegram bots and APIs with aiogram and FastAPI."
+    },
+    "bot": {
+      "title": "Order Automation Bot",
+      "description": "A Telegram bot for automating customer orders."
+    }
+  }
+}

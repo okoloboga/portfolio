@@ -1,0 +1,35 @@
+{
+  "about": {
+    "items": [
+      {
+        "id": "bio",
+        "icon": "/assets/icons/scroll.png",
+        "type": "text",
+        "title": "about.title",
+        "description": "about.description"
+      }
+    ]
+  },
+  "stack": {
+    "items": [
+      { "id": "python", "icon": "/assets/icons/python.png", "type": "text", "title": "stack.python", "description": "stack.python_desc" },
+      { "id": "react", "icon": "/assets/icons/react.png", "type": "text", "title": "stack.react", "description": "stack.react_desc" }
+    ]
+  },
+  "projects": {
+    "items": [
+      {
+        "id": "bot",
+        "icon": "/assets/icons/bot.png",
+        "type": "project",
+        "title": "projects.bot",
+        "description": "projects.bot_desc",
+        "links": [
+          { "label": "GitHub", "url": "https://github.com/..." },
+          { "label": "Live", "url": "https://t.me/..." }
+        ],
+        "screenshots": ["/assets/screenshots/bot1.png", "/assets/screenshots/bot2.png"]
+      }
+    ]
+  }
+}
