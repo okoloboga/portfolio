@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "about": "About",
+    "stack": "Tech Stack",
+    "projects": "Projects",
+    "certificates": "Certificates",
+    "prices": "Prices",
+    "contacts": "Contacts"
+  },
+  "content": {
+    "bio": {
+      "title": "About Me",
+      "description": "I'm a backend developer from Russia with 1+ year of commercial experience in building Telegram bots, web apps, and fullstack solutions. Skilled in Python (FastAPI, aiogram), JavaScript/TypeScript (Node.js, Express, Nest, React), Docker, Redis, and Postgres. Passionate about clean code and pixel art."
+    },
+    "python": {
+      "title": "Python",
+      "description": "Used for Telegram bots and APIs with aiogram and FastAPI."
+    },
+    "fastapi": {
+      "title": "FastAPI",
+      "description": "Built high-performance APIs for web applications."
+    },
+    "react": {
+      "title": "React",
+      "description": "Developed dynamic frontends for web apps."
+    },
+    "nodejs": {
+      "title": "Node.js",
+      "description": "Created backend services with Node.js."
+    },
+    "express": {
+      "title": "Express",
+      "description": "Used for lightweight API development."
+    },
+    "nest": {
+      "title": "Nest",
+      "description": "Built scalable backend applications."
+    },
+    "docker": {
+      "title": "Docker",
+      "description": "Containerized applications for easy deployment."
+    },
+    "redis": {
+      "title": "Redis",
+      "description": "Implemented caching for performance optimization."
+    },
+    "postgres": {
+      "title": "Postgres",
+      "description": "Managed databases for robust data storage."
+    },
+    "telegram_bot": {
+      "title": "Order Automation Bot",
+      "description": "A Telegram bot for automating customer orders, built with aiogram and Redis."
+    },
+    "website": {
+      "title": "Corporate Website",
+      "description": "A responsive website for a small business, built with React and FastAPI."
+    },
+    "landing": {
+      "title": "Landing Page",
+      "description": "A promotional landing page for a startup, built with React."
+    },
+    "telegram_app": {
+      "title": "Telegram Mini-App",
+      "description": "A gamified Telegram application built with TypeScript and Node.js."
+    }
+  }
+}

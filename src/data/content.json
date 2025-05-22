@@ -12,23 +12,186 @@
   },
   "stack": {
     "items": [
-      { "id": "python", "icon": "/assets/icons/python.png", "type": "text", "title": "stack.python", "description": "stack.python_desc" },
-      { "id": "react", "icon": "/assets/icons/react.png", "type": "text", "title": "stack.react", "description": "stack.react_desc" }
+      {
+        "id": "python",
+        "icon": "/assets/icons/python.png",
+        "type": "text",
+        "title": "stack.python",
+        "description": "stack.python_desc"
+      },
+      {
+        "id": "fastapi",
+        "icon": "/assets/icons/fastapi.png",
+        "type": "text",
+        "title": "stack.fastapi",
+        "description": "stack.fastapi_desc"
+      },
+      {
+        "id": "react",
+        "icon": "/assets/icons/react.png",
+        "type": "text",
+        "title": "stack.react",
+        "description": "stack.react_desc"
+      },
+      {
+        "id": "nodejs",
+        "icon": "/assets/icons/nodejs.png",
+        "type": "text",
+        "title": "stack.nodejs",
+        "description": "stack.nodejs_desc"
+      },
+      {
+        "id": "express",
+        "icon": "/assets/icons/express.png",
+        "type": "text",
+        "title": "stack.express",
+        "description": "stack.express_desc"
+      },
+      {
+        "id": "nest",
+        "icon": "/assets/icons/nest.png",
+        "type": "text",
+        "title": "stack.nest",
+        "description": "stack.nest_desc"
+      },
+      {
+        "id": "docker",
+        "icon": "/assets/icons/docker.png",
+        "type": "text",
+        "title": "stack.docker",
+        "description": "stack.docker_desc"
+      },
+      {
+        "id": "redis",
+        "icon": "/assets/icons/redis.png",
+        "type": "text",
+        "title": "stack.redis",
+        "description": "stack.redis_desc"
+      },
+      {
+        "id": "postgres",
+        "icon": "/assets/icons/postgres.png",
+        "type": "text",
+        "title": "stack.postgres",
+        "description": "stack.postgres_desc"
+      }
     ]
   },
   "projects": {
     "items": [
       {
-        "id": "bot",
+        "id": "telegram-bot",
         "icon": "/assets/icons/bot.png",
         "type": "project",
         "title": "projects.bot",
         "description": "projects.bot_desc",
         "links": [
-          { "label": "GitHub", "url": "https://github.com/..." },
-          { "label": "Live", "url": "https://t.me/..." }
+          { "label": "GitHub", "url": "https://github.com/your-repo/bot" },
+          { "label": "Live", "url": "https://t.me/your-bot" }
         ],
-        "screenshots": ["/assets/screenshots/bot1.png", "/assets/screenshots/bot2.png"]
+        "screenshots": [
+          "/assets/screenshots/bot1.png",
+          "/assets/screenshots/bot2.png"
+        ]
+      },
+      {
+        "id": "website",
+        "icon": "/assets/icons/website.png",
+        "type": "project",
+        "title": "projects.website",
+        "description": "projects.website_desc",
+        "links": [
+          { "label": "GitHub", "url": "https://github.com/your-repo/website" },
+          { "label": "Live", "url": "https://your-website.com" }
+        ],
+        "screenshots": [
+          "/assets/screenshots/website1.png",
+          "/assets/screenshots/website2.png"
+        ]
+      },
+      {
+        "id": "landing",
+        "icon": "/assets/icons/landing.png",
+        "type": "project",
+        "title": "projects.landing",
+        "description": "projects.landing_desc",
+        "links": [
+          { "label": "GitHub", "url": "https://github.com/your-repo/landing" },
+          { "label": "Live", "url": "https://your-landing.com" }
+        ],
+        "screenshots": [
+          "/assets/screenshots/landing1.png",
+          "/assets/screenshots/landing2.png"
+        ]
+      },
+      {
+        "id": "telegram-app",
+        "icon": "/assets/icons/telegram-app.png",
+        "type": "project",
+        "title": "projects.telegram_app",
+        "description": "projects.telegram_app_desc",
+        "links": [
+          { "label": "GitHub", "url": "https://github.com/your-repo/telegram-app" },
+          { "label": "Live", "url": "https://t.me/your-app" }
+        ],
+        "screenshots": [
+          "/assets/screenshots/telegram-app1.png",
+          "/assets/screenshots/telegram-app2.png"
+        ]
+      }
+    ]
+  },
+  "certificates": {
+    "items": [
+      {
+        "id": "coursera-python",
+        "icon": "/assets/icons/scroll.png",
+        "type": "text",
+        "title": "certificates.coursera_python",
+        "description": "certificates.coursera_python_desc"
+      }
+    ]
+  },
+  "prices": {
+    "items": [
+      {
+        "id": "bot",
+        "icon": "/assets/icons/bot.png",
+        "type": "text",
+        "title": "prices.bot",
+        "description": "prices.bot_desc"
+      }
+    ]
+  },
+  "contacts": {
+    "items": [
+      {
+        "id": "email",
+        "icon": "/assets/icons/email.png",
+        "type": "text",
+        "title": "contacts.email",
+        "description": "contacts.email_desc"
+      },
+      {
+        "id": "telegram",
+        "icon": "/assets/icons/telegram.png",
+        "type": "text",
+        "title": "contacts.telegram",
+        "description": "contacts.telegram_desc"
+      },
+      {
+        "id": "github",
+        "icon": "/assets/icons/github.png",
+        "type": "text",
+        "title": "contacts.github",
+        "description": "contacts.github_desc"
+      },
+      {
+        "id": "linkedin",
+        "icon": "/assets/icons/linkedin.png",
+        "type": "text",
+        "title": "contacts.linkedin",
+        "description": "contacts.linkedin_desc"
       }
     ]
   }
