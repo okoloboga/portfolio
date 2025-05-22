@@ -7,6 +7,7 @@
 
 <script>
 export default {
+  name: 'PixelInventory',
   props: {
     items: Array,
   },
@@ -21,17 +22,26 @@ export default {
   transform: translate(-50%, -50%);
   width: 96px;
   height: 96px;
+  display: grid;
+  grid-template: repeat(5, 16px) / repeat(5, 16px);
+  gap: 3px; /* Учитываем отступы в сетке 96x96 */
+  padding: 3px; /* Учитываем рамку */
+  image-rendering: pixelated;
 }
 .grid {
   position: absolute;
   width: 96px;
   height: 96px;
   image-rendering: pixelated;
+  z-index: -1;
 }
 .item {
-  position: absolute;
   width: 16px;
   height: 16px;
   image-rendering: pixelated;
+  cursor: pointer;
+}
+.item:hover {
+  filter: brightness(1.2);
 }
 </style>

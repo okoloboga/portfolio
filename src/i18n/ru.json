@@ -10,59 +10,137 @@
   "content": {
     "bio": {
       "title": "About Me",
-      "description": "I'm a backend developer from Russia with 1+ year of commercial experience in building Telegram bots, web apps, and fullstack solutions. Skilled in Python (FastAPI, aiogram), JavaScript/TypeScript (Node.js, Express, Nest, React), Docker, Redis, and Postgres. Passionate about clean code and pixel art."
+      "description": "Backend developer from Russia with 1+ year of commercial experience in building Telegram bots, web apps, and fullstack solutions. Skilled in Python (FastAPI, aiogram), JavaScript/TypeScript (Node.js, Express, Nest, React, Vue), Docker, Redis, and Postgres. Passionate about clean code and retro pixel art."
     },
-    "python": {
-      "title": "Python",
-      "description": "Used for Telegram bots and APIs with aiogram and FastAPI."
-    },
-    "fastapi": {
-      "title": "FastAPI",
-      "description": "Built high-performance APIs for web applications."
-    },
-    "react": {
-      "title": "React",
-      "description": "Developed dynamic frontends for web apps."
-    },
-    "nodejs": {
-      "title": "Node.js",
-      "description": "Created backend services with Node.js."
-    },
-    "express": {
-      "title": "Express",
-      "description": "Used for lightweight API development."
-    },
-    "nest": {
-      "title": "Nest",
-      "description": "Built scalable backend applications."
+    "arch": {
+      "title": "Arch Linux",
+      "description": "I use Arch, btw. My go-to OS for development."
     },
     "docker": {
       "title": "Docker",
-      "description": "Containerized applications for easy deployment."
+      "description": "Every freelance web developer needs some DevOps skills. I use Docker for containerization."
+    },
+    "eth": {
+      "title": "Ethereum",
+      "description": "Worked with Ethereum libraries, particularly web3.js."
+    },
+    "express": {
+      "title": "Express",
+      "description": "Perfect for small applications like Telegram Mini Apps."
+    },
+    "fastapi": {
+      "title": "FastAPI",
+      "description": "The most convenient and clear tool for building APIs."
+    },
+    "git": {
+      "title": "Git",
+      "description": "As sacred as Linux. Essential for version control."
+    },
+    "js": {
+      "title": "JavaScript",
+      "description": "Second (and last) after Python in my stack."
+    },
+    "nest": {
+      "title": "NestJS",
+      "description": "For serious developers building robust applications."
+    },
+    "node": {
+      "title": "Node.js",
+      "description": "The cradle for JavaScript and TypeScript development."
+    },
+    "npm": {
+      "title": "npm",
+      "description": "A bit cumbersome but reliable package manager."
+    },
+    "postgres": {
+      "title": "PostgreSQL",
+      "description": "The ultimate database for all my projects."
+    },
+    "python": {
+      "title": "Python",
+      "description": "My top language with over 2 years of experience."
+    },
+    "react": {
+      "title": "React",
+      "description": "Like a jet engine for building awesome interfaces."
     },
     "redis": {
       "title": "Redis",
-      "description": "Implemented caching for performance optimization."
+      "description": "Used for caching, small tasks, and even as a lightweight database."
     },
-    "postgres": {
-      "title": "Postgres",
-      "description": "Managed databases for robust data storage."
+    "telegram": {
+      "title": "Telegram API",
+      "description": "I build bots and Telegram Mini Apps, working extensively with the Telegram API."
+    },
+    "tensorflow": {
+      "title": "TensorFlow",
+      "description": "The future of IT with machine learning capabilities."
+    },
+    "ton": {
+      "title": "TON",
+      "description": "The future of blockchain technology."
+    },
+    "ts": {
+      "title": "TypeScript",
+      "description": "A sane version of JavaScript."
+    },
+    "vue": {
+      "title": "Vue",
+      "description": "Just Vue — simple and powerful."
     },
     "telegram_bot": {
-      "title": "Order Automation Bot",
-      "description": "A Telegram bot for automating customer orders, built with aiogram and Redis."
+      "title": "Telegram Bot",
+      "description": "A bot for automating customer orders, built with aiogram and Redis."
     },
     "website": {
       "title": "Corporate Website",
-      "description": "A responsive website for a small business, built with React and FastAPI."
+      "description": "A website for a small business, built with FastAPI and Vue."
     },
     "landing": {
       "title": "Landing Page",
       "description": "A promotional landing page for a startup, built with React."
     },
     "telegram_app": {
-      "title": "Telegram Mini-App",
-      "description": "A gamified Telegram application built with TypeScript and Node.js."
+      "title": "Telegram Mini App",
+      "description": "A gamified Telegram Mini App, built with Express and Vue."
+    },
+    "python_course": {
+      "title": "Python Course",
+      "description": "Completed a Python course on Coursera."
+    },
+    "fastapi_course": {
+      "title": "FastAPI Course",
+      "description": "Completed a FastAPI course on Udemy."
+    },
+    "telegram_bot_price": {
+      "title": "Telegram Bot Development",
+      "description": "From $500 for a basic bot. Contact for details."
+    },
+    "website_price": {
+      "title": "Website Development",
+      "description": "From $1000 for a landing page. Contact for details."
+    },
+    "fullstack_price": {
+      "title": "Fullstack Development",
+      "description": "From $2000 for an MVP. Contact for details."
+    },
+    "github": {
+      "title": "GitHub"
+    },
+    "vk": {
+      "title": "VK"
+    },
+    "telegram": {
+      "title": "Telegram"
+    },
+    "linkedin": {
+      "title": "LinkedIn"
+    },
+    "kaggle": {
+      "title": "Kaggle"
+    },
+    "kwork": {
+      "title": "Kwork"
     }
   }
 }

@@ -1,4 +1,7 @@
 <template>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  </head>
   <div class="header">
     <div v-for="section in sections" :key="section" class="nav-item" @click="scrollToSection(section)">
       {{ $t(`nav.${section}`) }}
@@ -13,6 +16,7 @@
 
 <script>
 export default {
+  name: 'PixelHeader',
   data() {
     return {
       sections: ['about', 'stack', 'projects'],

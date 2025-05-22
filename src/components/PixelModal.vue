@@ -23,6 +23,7 @@
 
 <script>
 export default {
+  name: 'PixelModal',
   props: {
     content: Object,
   },
@@ -74,8 +75,10 @@ export default {
   right: 10px;
   width: 16px;
   height: 16px;
-  background: url('/assets/ui/close.png');
+  background: url('/assets/ui/close.png') no-repeat center;
+  background-size: 16px 16px;
   image-rendering: pixelated;
   cursor: pointer;
+  transform: scale(2); /* Масштабирование в 2x */
 }
 </style>
