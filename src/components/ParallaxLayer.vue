@@ -1,6 +1,7 @@
 <template>
-  <div class="parallax-layer" :style="layerStyle">
-    <img :src="src" alt="Parallax Layer" />
+  <div v-if="src" class="parallax-layer" :style="layerStyle"></div>
+  <div v-else-if="images && images.length" class="parallax-layer-sequence" :style="sequenceStyle">
+    <img v-for="(image, index) in images" :key="index" :src="image" :style="imageStyle()" />
   </div>
 </template>
 
@@ -9,28 +10,72 @@ export default {
   name: 'ParallaxLayer',
   props: {
     src: String,
+    images: Array,
     speed: Number,
-    offset: {
+    zIndex: {
+      type: Number,
+      default: -1,
+    },
+    scrollWidth: {
       type: Number,
       default: 0,
-    },
-    zIndex: {
-      type: String,
-      default: '-1',
     },
   },
   computed: {
     layerStyle() {
-      return {
-        transform: `translateX(${this.offset - this.$root.scrollX * this.speed}px)`, /* Учитываем offset */
-        width: '100%',
-        height: '100vh', /* Масштабируем до высоты экрана */
-        position: this.src.includes('sky.png') ? 'fixed' : 'absolute',
-        top: '0', /* Выравниваем по верхнему краю */
+      const scrollX = this.$root.scrollX || 0;
+      const positionX = -scrollX * this.speed;
+
+      const baseStyle = {
+        height: '100vh',
+        position: 'absolute',
+        top: '0',
         left: '0',
         zIndex: this.zIndex,
         imageRendering: 'pixelated',
+        backgroundImage: `url(${this.src})`,
       };
+
+      if (this.speed === 0) {
+        return {
+          ...baseStyle,
+          width: '100%',
+          backgroundPosition: '0 0',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          position: 'fixed',
+        };
+      }
+
+      return {
+        ...baseStyle,
+        width: `${this.scrollWidth}px`,
+        backgroundPositionX: `${positionX}px`,
+        backgroundRepeat: 'repeat-x',
+        backgroundSize: 'auto 100vh',
+      };
+    },
+    sequenceStyle() {
+      const scrollX = this.$root.scrollX || 0;
+      const positionX = -scrollX * this.speed;
+      return {
+        transform: `translateX(${positionX}px)`,
+        width: `${this.scrollWidth}px`,
+        height: '100vh',
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        zIndex: this.zIndex,
+        display: 'flex',
+      };
+    },
+    imageStyle() {
+      return () => ({
+        width: '1920px',
+        height: '100vh',
+        objectFit: 'cover',
+        imageRendering: 'pixelated',
+      });
     },
   },
 };
@@ -38,12 +83,6 @@ export default {
 
 <style>
 .parallax-layer {
-  flex-shrink: 0; /* Предотвращаем сжатие слоёв */
-}
-.parallax-layer img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Масштабируем изображение */
-  image-rendering: pixelated;
+  flex-shrink: 0;
 }
 </style>

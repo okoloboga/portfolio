@@ -1,7 +1,10 @@
 <template>
   <div class="inventory">
     <img class="grid" src="/assets/inventory/grid.png" />
-    <div v-for="item in items" :key="item.id" class="item" :style="{ backgroundImage: `url(${item.icon})` }" @click="$emit('openModal', item)"></div>
+    <div class="close-inventory" @click="$emit('close')"></div>
+    <div v-for="item in items" :key="item.id" class="item-cell" @click="$emit('openModal', item)">
+      <img :src="item.icon" class="item-icon" />
+    </div>
   </div>
 </template>
 
@@ -20,28 +23,50 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 96px;
-  height: 96px;
+  width: 384px;
+  height: 384px;
   display: grid;
-  grid-template: repeat(5, 16px) / repeat(5, 16px);
-  gap: 3px; /* Учитываем отступы в сетке 96x96 */
-  padding: 3px; /* Учитываем рамку */
+  grid-template: repeat(5, 64px) / repeat(5, 64px);
+  gap: 4px;
+  padding: 0px; /* Corrected padding */
+  justify-content: center; /* Center grid horizontally */
+  align-content: center; /* Center grid vertically */
   image-rendering: pixelated;
 }
 .grid {
   position: absolute;
-  width: 96px;
-  height: 96px;
+  width: 100%;
+  height: 100%;
   image-rendering: pixelated;
   z-index: -1;
 }
-.item {
-  width: 16px;
-  height: 16px;
+.item-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform: translate(1px, 1px); /* Nudge the cell position */
+}
+
+.item-icon {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.item-cell:hover .item-icon {
+  filter: brightness(1.2);
+}
+.close-inventory {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 32px;
+  height: 32px;
+  background: url('/assets/ui/close.png') no-repeat center;
+  background-size: contain;
   image-rendering: pixelated;
   cursor: pointer;
-}
-.item:hover {
-  filter: brightness(1.2);
 }
 </style>

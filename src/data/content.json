@@ -211,24 +211,6 @@
       }
     ]
   },
-  "certificates": {
-    "items": [
-      {
-        "id": "python_course",
-        "icon": "/assets/icons/scroll.png",
-        "type": "text",
-        "title": "certificates.python_course",
-        "description": "certificates.python_course_desc"
-      },
-      {
-        "id": "fastapi_course",
-        "icon": "/assets/icons/scroll.png",
-        "type": "text",
-        "title": "certificates.fastapi_course",
-        "description": "certificates.fastapi_course_desc"
-      }
-    ]
-  },
   "prices": {
     "items": [
       {
@@ -276,13 +258,6 @@
         "type": "link",
         "title": "contacts.telegram",
         "url": "https://t.me/yourusername"
-      },
-      {
-        "id": "linkedin",
-        "icon": "/assets/icons/linkedin32.png",
-        "type": "link",
-        "title": "contacts.linkedin",
-        "url": "https://linkedin.com/in/yourusername"
       },
       {
         "id": "kaggle",

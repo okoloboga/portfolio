@@ -1,17 +1,10 @@
 <template>
-  <head>
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-  </head>
-  <div class="header">
-    <div v-for="section in sections" :key="section" class="nav-item" @click="scrollToSection(section)">
-      {{ $t(`nav.${section}`) }}
-    </div>
-    <div class="lang-switcher">
-      <span v-for="lang in languages" :key="lang" @click="$i18n.locale = lang" :class="{ active: $i18n.locale === lang }">
-        {{ lang.toUpperCase() }}
-      </span>
-    </div>
-  </div>
+  <header class="pixel-header">
+    <button v-for="button in navButtons" :key="button.label" @click="scrollTo(button.target)">
+      {{ button.label }}
+    </button>
+    <button @click="cycleLanguage">{{ currentLocale.toUpperCase() }}</button>
+  </header>
 </template>
 
 <script>
@@ -19,46 +12,62 @@ export default {
   name: 'PixelHeader',
   data() {
     return {
-      sections: ['about', 'stack', 'projects'],
-      languages: ['ru', 'en', 'cn', 'jp'],
+      navButtons: [
+        { label: 'begin', target: -1 },
+        { label: 'about', target: 0 },
+        { label: 'stack', target: 1 },
+        { label: 'projects', target: 2 },
+        { label: 'price', target: 3 },
+        { label: 'contact', target: 4 },
+      ],
     };
   },
+  computed: {
+    currentLocale() {
+      return this.$i18n.locale;
+    },
+    availableLocales() {
+      return this.$i18n.availableLocales;
+    },
+  },
   methods: {
-    scrollToSection(section) {
-      const chest = document.querySelector(`.chest[data-section="${section}"]`);
-      chest.scrollIntoView({ behavior: 'smooth' });
+    scrollTo(targetIndex) {
+      this.$emit('scrollTo', targetIndex);
+    },
+    cycleLanguage() {
+      const currentIndex = this.availableLocales.indexOf(this.currentLocale);
+      const nextIndex = (currentIndex + 1) % this.availableLocales.length;
+      const nextLocale = this.availableLocales[nextIndex];
+      console.log('Switching to:', nextLocale, 'Available locales:', this.availableLocales);
+      this.$i18n.locale = nextLocale;
     },
   },
 };
 </script>
 
 <style>
-.header {
+.pixel-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 16px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
+  z-index: 1000;
+}
+
+.pixel-header button {
+  flex-grow: 1;
+  background: none;
+  border: none;
+  color: white;
+  padding: 15px 0;
   font-family: 'VT323', monospace;
-  color: #B0BEC5;
-  z-index: 10;
-}
-.nav-item {
+  font-size: 24px;
   cursor: pointer;
-  margin-right: 20px;
+  transition: transform 0.2s ease;
 }
-.nav-item:hover {
-  color: #FF5252;
-}
-.lang-switcher span {
-  cursor: pointer;
-  margin-left: 10px;
-}
-.lang-switcher .active {
-  color: #FF5252;
+
+.pixel-header button:hover {
+  transform: scale(1.1);
 }
 </style>

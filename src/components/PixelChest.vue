@@ -1,10 +1,6 @@
 <template>
-  <div class="chest" :style="{ left: `${x}px` }" :data-section="section" @click="open">
-    <div class="chest-sprite" :class="{ opened: opened }"></div>
-    <div class="pointer" v-if="!opened">
-      <div class="pointer-sprite"></div>
-      <span>{{ $t(`nav.${section}`) }}</span>
-    </div>
+  <div class="chest-container" :style="containerStyle" @click="onChestClick">
+    <img :src="imageSrc" class="chest-image" />
   </div>
 </template>
 
@@ -12,19 +8,36 @@
 export default {
   name: 'PixelChest',
   props: {
-    x: Number,
-    section: String,
+    positionX: {
+      type: Number,
+      required: true,
+    },
+    isOpen: {
+      type: Boolean,
+      default: false,
+    },
+    scrollX: {
+      type: Number,
+      default: 0,
+    },
   },
-  data() {
-    return {
-      opened: false,
-    };
+  computed: {
+    containerStyle() {
+      const speed = 0.6; // This MUST match the speed of the field/forest layer
+      const transformX = this.positionX - this.scrollX * speed;
+      return {
+        transform: `translateX(${transformX}px)`,
+        bottom: '20px',
+      };
+    },
+    imageSrc() {
+      return this.isOpen ? '/assets/chest/chest-open.png' : '/assets/chest/chest-close.png';
+    },
   },
   methods: {
-    open() {
-      if (!this.opened) {
-        this.opened = true;
-        this.$emit('open', this.section);
+    onChestClick() {
+      if (!this.isOpen) {
+        this.$emit('open');
       }
     },
   },
@@ -32,46 +45,17 @@ export default {
 </script>
 
 <style>
-.chest {
+.chest-container {
   position: absolute;
-  bottom: 20px;
-  width: 32px;
-  height: 32px;
-  image-rendering: pixelated;
-  transform: scale(2); /* Масштабирование в 2x */
+  width: 256px;
+  height: 256px;
+  cursor: pointer;
+  z-index: 5;
 }
-.chest-sprite {
+
+.chest-image {
   width: 100%;
   height: 100%;
-  background: url('/assets/chest/chest.png') no-repeat;
-  background-size: 128px 32px; /* Предполагаем 4 кадра */
   image-rendering: pixelated;
-}
-.chest-sprite.opened {
-  background-position: -32px 0; /* Второй кадр для открытого сундука */
-}
-.pointer {
-  position: absolute;
-  top: -20px;
-  width: 32px;
-  height: 16px;
-  text-align: center;
-  image-rendering: pixelated;
-}
-.pointer-sprite {
-  width: 100%;
-  height: 100%;
-  background: url('/assets/ui/pointer.png') no-repeat;
-  background-size: 32px 16px; /* Предполагаем одиночный кадр */
-  image-rendering: pixelated;
-}
-.pointer span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  color: #B0BEC5;
-  font-family: 'VT323', monospace;
-  font-size: 12px;
 }
 </style>
