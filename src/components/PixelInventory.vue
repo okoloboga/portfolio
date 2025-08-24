@@ -27,7 +27,7 @@ export default {
   height: 420px;
   display: grid;
   grid-template: repeat(5, 64px) / repeat(5, 64px);
-  gap: 4px;
+  gap: 10px;
   padding: 0px; /* Corrected padding */
   justify-content: center; /* Center grid horizontally */
   align-content: center; /* Center grid vertically */

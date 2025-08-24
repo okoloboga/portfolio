@@ -87,41 +87,37 @@
     "title": "Vue",
     "description": "Just Vue — simple and powerful."
   },
-  "telegram_bot": {
-    "title": "Telegram Bot",
-    "description": "A bot for automating customer orders, built with aiogram and Redis."
+  "svara": {
+    "title": "SvaraPro",
+    "description": "Developed a full-featured 6-player card game as a Telegram Mini App with integrated cryptocurrency betting (TON, USDT). Engineered complex game logic, real-time interactions via WebSockets, and a referral system for user acquisition. The backend ensures high performance and reliability through a microservices architecture built with Nest.js, PostgreSQL, and Redis."
   },
-  "website": {
-    "title": "Corporate Website",
-    "description": "A website for a small business, built with FastAPI and Vue."
+  "trader": {
+    "title": "Ruble Trader Game",
+    "description": "Built a gamified trading simulator within a Telegram Mini App. Users can trade with small deposits, compete on leaderboards, and farm game tokens for activity. A key feature is the TonConnect integration for secure crypto transactions. The project architecture features a Vue.js frontend, a high-performance Nest.js backend, and real-time price updates via WebSockets."
   },
-  "landing": {
-    "title": "Landing Page",
-    "description": "A promotional landing page for a startup, built with React."
+  "caller": {
+    "title": "Crypto Caller",
+    "description": "Engineered an alert service that notifies users of crypto price targets via automated phone calls using Twilio. Users set custom price levels for tokens, and the system triggers a call upon reaching them. The project includes a subscription model, exchange integrations, and a robust backend for processing high volumes of real-time market data."
   },
-  "telegram_app": {
-    "title": "Telegram Mini App",
-    "description": "A gamified Telegram Mini App, built with Express and Vue."
+  "ruble": {
+    "title": "Ruble Coin Landing",
+    "description": "Designed and developed a high-conversion landing page for the Ruble cryptocurrency token. The goal was to clearly present the project's concept, benefits, and call-to-action. The site features a responsive design, custom JavaScript animations, and is optimized for search engines (SEO) to effectively attract investors and users."
   },
-  "python_course": {
-    "title": "Python Course",
-    "description": "Completed a Python course on Coursera."
+  "jesko": {
+    "title": "Jesko VPN",
+    "description": "Designed and launched a comprehensive Telegram bot for selling VPN access via Outline. The system automatically generates and configures VPN keys for various devices and countries. Implemented multi-currency payments (including crypto), a referral program, subscription giveaways, and a powerful admin panel for user and financial management built on FastAPI and PostgreSQL."
   },
-  "fastapi_course": {
-    "title": "FastAPI Course",
-    "description": "Completed a FastAPI course on Udemy."
+  "neurobot": {
+    "title": "NeuronAgent",
+    "description": "Created a multifunctional Telegram bot for interacting with OpenAI and Midjourney AI models. The bot communicates via voice messages (speech-to-text and text-to-speech), generates images from prompts, and operates on a subscription model. Implemented a referral system and an admin panel for analytics and content management."
   },
-  "telegram_bot_price": {
-    "title": "Telegram Bot Development",
-    "description": "From $500 for a basic bot. Contact for details."
+  "mori": {
+    "title": "MORI SWAP",
+    "description": "Developed a single-page application (SPA) for seamless bridging of USDT from the TON network to meme coins on the Solana ecosystem (Mori). Integrated with two bridging protocols, Rhino.fi and Jupiter AG, to ensure the best rates and liquidity. The React-based interface is intuitive and securely interacts with user wallets via Web3."
   },
-  "website_price": {
-    "title": "Website Development",
-    "description": "From $1000 for a landing page. Contact for details."
-  },
-  "fullstack_price": {
-    "title": "Fullstack Development",
-    "description": "From $2000 for an MVP. Contact for details."
+  "style": {
+    "title": "STYLE.RF",
+    "description": "Full-stack development of a beauty blog with a custom content management system (CMS). The platform includes user profiles, commenting with likes/dislikes, content sharing functionality, email notifications (NodeMailer), and brand promotion features. The admin panel allows for easy management of articles, news, and user engagement."
   },
   "github": {
     "title": "GitHub"
@@ -140,5 +136,36 @@
   },
   "kwork": {
     "title": "Kwork"
+  },
+  "prices": {
+    "hour": "hour",
+    "hours": "hours",
+    "fullstack_dev_header": { "title": "Fullstack Development" },
+    "fullstack_1": { "title": "50-Hour Package" },
+    "fullstack_2": { "title": "100-Hour Package" },
+    "backend_dev_header": { "title": "Backend Development" },
+    "backend_1": { "title": "50-Hour Package" },
+    "backend_2": { "title": "100-Hour Package" },
+    "frontend_dev_header": { "title": "Frontend Development" },
+    "frontend_1": { "title": "50-Hour Package" },
+    "frontend_2": { "title": "100-Hour Package" },
+    "telegram_bots_header": { "title": "Telegram Bots (Aiogram)" },
+    "telegram_bots_1": { "title": "30-Hour Package" },
+    "telegram_bots_2": { "title": "50-Hour Package" },
+    "telegram_mini_app_header": { "title": "Telegram Mini App (TMA)" },
+    "telegram_mini_app_1": { "title": "50-Hour Package" },
+    "telegram_mini_app_2": { "title": "100-Hour Package" },
+    "devops_header": { "title": "DevOps" },
+    "devops_1": { "title": "20-Hour Package" },
+    "devops_2": { "title": "50-Hour Package" },
+    "security_header": { "title": "Security (Audit/Implementation)" },
+    "security_1": { "title": "20-Hour Package" },
+    "security_2": { "title": "50-Hour Package" },
+    "smart_contracts_header": { "title": "Smart Contracts" },
+    "smart_contracts_1": { "title": "30-Hour Package" },
+    "smart_contracts_2": { "title": "80-Hour Package" },
+    "datascience_header": { "title": "DataScience / Machine Learning" },
+    "datascience_1": { "title": "40-Hour Package" },
+    "datascience_2": { "title": "100-Hour Package" }
   }
 }

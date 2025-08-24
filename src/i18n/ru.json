@@ -87,41 +87,37 @@
     "title": "Vue",
     "description": "Just Vue — simple and powerful."
   },
-  "telegram_bot": {
-    "title": "Telegram Bot",
-    "description": "A bot for automating customer orders, built with aiogram and Redis."
+  "svara": {
+    "title": "SvaraPro",
+    "description": "Разработал полнофункциональную карточную игру в формате Telegram Mini App для 6 игроков с системой ставок в криптовалюте (TON, USDT). Реализована сложная игровая логика, реальное время через WebSockets, реферальная система для привлечения пользователей. Бэкенд обеспечивает высокую производительность и отказоустойчивость благодаря микросервисной архитектуре на Nest.js, PostgreSQL и Redis."
   },
-  "website": {
-    "title": "Corporate Website",
-    "description": "A website for a small business, built with FastAPI and Vue."
+  "trader": {
+    "title": "Ruble Trader Game",
+    "description": "Создал игровой симулятор биржевой торговли в виде Telegram Mini App. Пользователи могут торговать с небольшими депозитами, участвовать в лидербордах и фармить игровые токены за активность. Ключевой особенностью является интеграция TonConnect для безопасных крипто-транзакций. Архитектура проекта включает Vue.js на фронтенде, высоконагруженный бэкенд на Nest.js и постоянное соединение для обновления котировок через WebSockets."
   },
-  "landing": {
-    "title": "Landing Page",
-    "description": "A promotional landing page for a startup, built with React."
+  "caller": {
+    "title": "Crypto Caller",
+    "description": "Реализовал сервис оповещений о достижении ценовых уровней на крипторынке через телефонные звонки с использованием Twilio. Пользователи устанавливают целевые цены для токенов, и система автоматически инициирует звонок при их достижении. Проект включает систему подписок, интеграцию с биржами и надежный бэкенд для обработки большого количества ценовых данных в реальном времени."
   },
-  "telegram_app": {
-    "title": "Telegram Mini App",
-    "description": "A gamified Telegram Mini App, built with Express and Vue."
+  "ruble": {
+    "title": "Ruble Coin Landing",
+    "description": "Разработал и внедрил высококонверсионный лендинг для криптовалютного токена Ruble. Целью было четко представить концепцию проекта, его преимущества и призыв к действию. Сайт отличается отзывчивым дизайном, анимациями на чистом JavaScript и оптимизирован для поисковых систем, что способствует эффективному привлечению инвесторов и пользователей."
   },
-  "python_course": {
-    "title": "Python Course",
-    "description": "Completed a Python course on Coursera."
+  "jesko": {
+    "title": "Jesko VPN",
+    "description": "Спроектировал и запустил полноценный Telegram-бот для продажи VPN-доступа через Outline. Система автоматически создает и конфигурирует VPN-ключи для разных устройств и стран. Реализованы мультивалютные платежи (вкл. криптовалюты), реферальная программа, розыгрыши подписок и мощная админ-панель для управления пользователями и финансами на базе FastAPI и PostgreSQL."
   },
-  "fastapi_course": {
-    "title": "FastAPI Course",
-    "description": "Completed a FastAPI course on Udemy."
+  "neurobot": {
+    "title": "NeuronAgent",
+    "description": "Создал многофункционального Telegram-бота для работы с нейросетями OpenAI и Midjourney. Бот общается с пользователями голосовыми сообщениями (преобразует речь в текст и обратно), генерирует изображения по запросам и работает по модели подписки. Внедрена реферальная система и админ-панель для анализа статистики и управления контентом."
   },
-  "telegram_bot_price": {
-    "title": "Telegram Bot Development",
-    "description": "From $500 for a basic bot. Contact for details."
+  "mori": {
+    "title": "MORI SWAP",
+    "description": "Разработал одностраничное приложение (SPA) для бесшовного бриджинга USDT из сети TON в мемкойны экосистемы Solana (Mori). Для обеспечения лучшего курса и ликвидности интеграция проведена с двумя мостами: Rhino.fi и Jupiter AG. Интерфейс на React интуитивно понятен и безопасно взаимодействует с кошельками пользователей через Web3."
   },
-  "website_price": {
-    "title": "Website Development",
-    "description": "From $1000 for a landing page. Contact for details."
-  },
-  "fullstack_price": {
-    "title": "Fullstack Development",
-    "description": "From $2000 for an MVP. Contact for details."
+  "style": {
+    "title": "STYLE.RF",
+    "description": "Полностью реализовал бьюти-блог с системой управления контентом (CMS). Платформа включает личные кабинеты пользователей, комментирование с лайками/дизлайками, функционал репостов, интеграцию с почтой для уведомлений (NodeMailer) и продвижение брендов. Админ-панель позволяет легко управлять статьями, новостями и пользовательским взаимодействием."
   },
   "github": {
     "title": "GitHub"
@@ -140,5 +136,36 @@
   },
   "kwork": {
     "title": "Kwork"
+  },
+  "prices": {
+    "hour": "час",
+    "hours": "часов",
+    "fullstack_dev_header": { "title": "Fullstack разработка" },
+    "fullstack_1": { "title": "Пакет на 50 часов" },
+    "fullstack_2": { "title": "Пакет на 100 часов" },
+    "backend_dev_header": { "title": "Backend разработка" },
+    "backend_1": { "title": "Пакет на 50 часов" },
+    "backend_2": { "title": "Пакет на 100 часов" },
+    "frontend_dev_header": { "title": "Frontend разработка" },
+    "frontend_1": { "title": "Пакет на 50 часов" },
+    "frontend_2": { "title": "Пакет на 100 часов" },
+    "telegram_bots_header": { "title": "Telegram Bots (Aiogram)" },
+    "telegram_bots_1": { "title": "Пакет на 30 часов" },
+    "telegram_bots_2": { "title": "Пакет на 50 часов" },
+    "telegram_mini_app_header": { "title": "Telegram Mini App (TMA)" },
+    "telegram_mini_app_1": { "title": "Пакет на 50 часов" },
+    "telegram_mini_app_2": { "title": "Пакет на 100 часов" },
+    "devops_header": { "title": "DevOps" },
+    "devops_1": { "title": "Пакет на 20 часов" },
+    "devops_2": { "title": "Пакет на 50 часов" },
+    "security_header": { "title": "Security (Аудит/Внедрение)" },
+    "security_1": { "title": "Пакет на 20 часов" },
+    "security_2": { "title": "Пакет на 50 часов" },
+    "smart_contracts_header": { "title": "Smart Contracts" },
+    "smart_contracts_1": { "title": "Пакет на 30 часов" },
+    "smart_contracts_2": { "title": "Пакет на 80 часов" },
+    "datascience_header": { "title": "DataScience / Machine Learning" },
+    "datascience_1": { "title": "Пакет на 40 часов" },
+    "datascience_2": { "title": "Пакет на 100 часов" }
   }
 }

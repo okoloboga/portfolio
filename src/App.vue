@@ -12,11 +12,13 @@
     <PixelChest v-for="chest in chests" :key="chest.id" :positionX="chest.positionX" :isOpen="chest.isOpen" :scrollX="scrollX" @open="handleChestOpen(chest)" />
     
     <!-- UI Modals -->
-    <PixelInventory v-if="activeInventory" :content="activeInventory.content" @openModal="openL2Modal" @close="closeEverything" />
+    <PixelInventory v-if="activeInventory" :items="activeInventory.content.items" @openModal="openL2Modal" @close="closeEverything" />
     <PixelStack v-if="activeStackContent" :content="activeStackContent.content" @itemClick="openL2Modal" @close="closeEverything" />
-    <PixelProject v-if="activeProjectContent" :content="activeProjectContent.content" @close="closeEverything" />
+    <PixelProject v-if="activeProject" :content="activeProject" @close="closeL2Modal" />
+    <PixelPrices v-if="activePrices" :content="activePrices.content" @close="closeEverything" />
     <PixelModal v-if="activeModalContent" :content="activeModalContent" @close="closeEverything" />
     <PixelModal v-if="activeL2ModalContent" :content="activeL2ModalContent" @close="closeL2Modal" />
+    <PixelContacts v-if="activeContacts" :content="activeContacts.content" @close="closeEverything" />
 
     <button class="arrow" @click="scrollToNextChest"></button>
   </div>
@@ -31,11 +33,13 @@ import PixelInventory from './components/PixelInventory.vue';
 import PixelHeader from './components/PixelHeader.vue';
 import PixelStack from './components/PixelStack.vue';
 import PixelProject from './components/PixelProject.vue';
+import PixelPrices from './components/PixelPrices.vue';
+import PixelContacts from './components/PixelContacts.vue';
 import content from './data/content.json';
 import { FONT_SIZES } from './styles/typography.js';
 
 export default {
-  components: { ParallaxLayer, PixelCharacter, PixelChest, PixelModal, PixelInventory, PixelHeader, PixelStack, PixelProject },
+  components: { ParallaxLayer, PixelCharacter, PixelChest, PixelModal, PixelInventory, PixelHeader, PixelStack, PixelProject, PixelPrices, PixelContacts },
   data() {
     return {
       sky: '/assets/backgrounds/sky.png',
@@ -50,9 +54,11 @@ export default {
       chests: [],
       activeInventory: null,
       activeStackContent: null,
-      activeProjectContent: null,
+      activeProject: null,
+      activePrices: null,
       activeModalContent: null,
       activeL2ModalContent: null,
+      activeContacts: null,
     };
   },
   methods: {
@@ -86,7 +92,7 @@ export default {
     },
     scrollToSection(chestIndex) {
       if (chestIndex === -1) {
-        this.scrollLeft = 0;
+        this.$refs.container.scrollLeft = 0;
         return;
       }
       const chest = this.chests[chestIndex];
@@ -106,33 +112,45 @@ export default {
         case 'list':
           this.activeStackContent = chest;
           break;
-        case 'project_list':
-          this.activeProjectContent = chest;
+        case 'price_list':
+          this.activePrices = chest;
           break;
         case 'modal':
           this.activeModalContent = { ...chest.content.items[0], chestId: chest.id };
           break;
+        case 'contacts':
+          this.activeContacts = chest;
+          break;
       }
     },
     openL2Modal(item) {
-      this.activeL2ModalContent = item;
+      if (item.type === 'project') {
+        this.activeProject = item;
+      } else {
+        this.activeL2ModalContent = item;
+      }
     },
     closeL2Modal() {
       this.activeL2ModalContent = null;
+      this.activeProject = null;
     },
     closeEverything() {
       if (this.activeInventory) this.activeInventory.isOpen = false;
       if (this.activeStackContent) this.activeStackContent.isOpen = false;
-      if (this.activeProjectContent) this.activeProjectContent.isOpen = false;
+      if (this.activeProject) this.activeProject.isOpen = false;
+      if (this.activePrices) this.activePrices.isOpen = false;
+      if (this.activeContacts) this.activeContacts.isOpen = false;
       if (this.activeModalContent) {
         const chestToClose = this.chests.find(c => c.id === this.activeModalContent.chestId);
         if (chestToClose) chestToClose.isOpen = false;
       }
       this.activeInventory = null;
       this.activeStackContent = null;
-      this.activeProjectContent = null;
+      this.activeProject = null;
+      this.activePrices = null;
       this.activeModalContent = null;
-      this.activeL2ModalContent = null; // Also close L2 modals on major actions
+      this.activeL2ModalContent = null;
+      this.activeContacts = null;
     },
   },
   created() {
@@ -146,7 +164,7 @@ export default {
 
     // --- Chests Initialization ---
     const chestSections = Object.keys(content).map(key => ({ id: key, ...content[key] }));
-    const chestTypes = ['modal', 'list', 'project_list', 'modal', 'modal']; // Matched to content.json order
+    const chestTypes = ['modal', 'list', 'inventory', 'price_list', 'contacts']; // Matched to content.json order
     
     this.chests = chestSections.map((section, i) => ({
       id: i,

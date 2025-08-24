@@ -151,8 +151,30 @@
   "projects": {
     "items": [
       {
+        "id": "svara",
+        "icon": "/assets/icons/book1.png",
+        "type": "project",
+        "title": "projects.svara",
+        "description": "projects.svara_desc",
+        "links": [
+          { "label": "GitHub", "url": "https://github.com/okoloboga/svarapro" },
+          { "label": "Live", "url": "https://t.me/Svaraprobot" }
+        ],
+        "screenshots": [
+          "/assets/portfilio/1.jpg",
+          "/assets/portfolio/2.jpg",
+          "/assets/portfilio/3.jpg",
+          "/assets/portfolio/4.jpg",
+          "/assets/portfilio/5.jpg",
+          "/assets/portfolio/6.jpg",
+          "/assets/portfilio/7.jpg",
+          "/assets/portfolio/8.jpg",
+          "/assets/portfilio/9.jpg"
+        ]
+      },
+      {
         "id": "telegram_bot",
-        "icon": "/assets/icons/telegram.png",
+        "icon": "/assets/icons/scroll4.png",
         "type": "project",
         "title": "projects.telegram_bot",
         "description": "projects.telegram_bot_desc",
@@ -165,9 +187,10 @@
           "/assets/screenshots/bot2.png"
         ]
       },
+
       {
         "id": "website",
-        "icon": "/assets/icons/scroll.png",
+        "icon": "/assets/icons/scroll1.png",
         "type": "project",
         "title": "projects.website",
         "description": "projects.website_desc",
@@ -182,7 +205,7 @@
       },
       {
         "id": "landing",
-        "icon": "/assets/icons/scroll.png",
+        "icon": "/assets/icons/scroll2.png",
         "type": "project",
         "title": "projects.landing",
         "description": "projects.landing_desc",
@@ -197,7 +220,52 @@
       },
       {
         "id": "telegram_app",
-        "icon": "/assets/icons/telegram.png",
+        "icon": "/assets/icons/book2.png",
+        "type": "project",
+        "title": "projects.telegram_app",
+        "description": "projects.telegram_app_desc",
+        "links": [
+          { "label": "GitHub", "url": "https://github.com/yourusername/telegram-app" },
+          { "label": "Live", "url": "https://t.me/yourapp" }
+        ],
+        "screenshots": [
+          "/assets/screenshots/app1.png",
+          "/assets/screenshots/app2.png"
+        ]
+      },
+      {
+        "id": "website",
+        "icon": "/assets/icons/scroll1.png",
+        "type": "project",
+        "title": "projects.website",
+        "description": "projects.website_desc",
+        "links": [
+          { "label": "GitHub", "url": "https://github.com/yourusername/website" },
+          { "label": "Live", "url": "https://yourwebsite.com" }
+        ],
+        "screenshots": [
+          "/assets/screenshots/site1.png",
+          "/assets/screenshots/site2.png"
+        ]
+      },
+      {
+        "id": "landing",
+        "icon": "/assets/icons/scroll2.png",
+        "type": "project",
+        "title": "projects.landing",
+        "description": "projects.landing_desc",
+        "links": [
+          { "label": "GitHub", "url": "https://github.com/yourusername/landing" },
+          { "label": "Live", "url": "https://yourlanding.com" }
+        ],
+        "screenshots": [
+          "/assets/screenshots/landing1.png",
+          "/assets/screenshots/landing2.png"
+        ]
+      },
+      {
+        "id": "telegram_app",
+        "icon": "/assets/icons/book2.png",
         "type": "project",
         "title": "projects.telegram_app",
         "description": "projects.telegram_app_desc",
@@ -214,27 +282,41 @@
   },
   "prices": {
     "items": [
-      {
-        "id": "telegram_bot",
-        "icon": "/assets/icons/telegram.png",
-        "type": "text",
-        "title": "prices.telegram_bot",
-        "description": "prices.telegram_bot_desc"
-      },
-      {
-        "id": "website",
-        "icon": "/assets/icons/scroll.png",
-        "type": "text",
-        "title": "prices.website",
-        "description": "prices.website_desc"
-      },
-      {
-        "id": "fullstack",
-        "icon": "/assets/icons/scroll.png",
-        "type": "text",
-        "title": "prices.fullstack",
-        "description": "prices.fullstack_desc"
-      }
+      { "id": "fullstack_dev_header", "type": "category", "title": "prices.fullstack_dev_header.title" },
+      { "id": "fullstack_1", "type": "price_item", "icon": "/assets/icons/vue.png", "title": "prices.fullstack_1.title", "hours": "50", "hourly_rate": "$19", "total": "$950" },
+      { "id": "fullstack_2", "type": "price_item", "icon": "/assets/icons/vue.png", "title": "prices.fullstack_2.title", "hours": "100", "hourly_rate": "$17", "total": "$1,700" },
+      
+      { "id": "backend_dev_header", "type": "category", "title": "prices.backend_dev_header.title" },
+      { "id": "backend_1", "type": "price_item", "icon": "/assets/icons/python.png", "title": "prices.backend_1.title", "hours": "50", "hourly_rate": "$17", "total": "$850" },
+      { "id": "backend_2", "type": "price_item", "icon": "/assets/icons/python.png", "title": "prices.backend_2.title", "hours": "100 ", "hourly_rate": "$15", "total": "$1,500" },
+
+      { "id": "frontend_dev_header", "type": "category", "title": "prices.frontend_dev_header.title" },
+      { "id": "frontend_1", "type": "price_item", "icon": "/assets/icons/react.png", "title": "prices.frontend_1.title", "hours": "50 ", "hourly_rate": "$17", "total": "$850" },
+      { "id": "frontend_2", "type": "price_item", "icon": "/assets/icons/react.png", "title": "prices.frontend_2.title", "hours": "100 ", "hourly_rate": "$15", "total": "$1,500" },
+
+      { "id": "telegram_bots_header", "type": "category", "title": "prices.telegram_bots_header.title" },
+      { "id": "telegram_bots_1", "type": "price_item", "icon": "/assets/icons/telegram.png", "title": "prices.telegram_bots_1.title", "hours": "30 ", "hourly_rate": "$18", "total": "$540" },
+      { "id": "telegram_bots_2", "type": "price_item", "icon": "/assets/icons/telegram.png", "title": "prices.telegram_bots_2.title", "hours": "50 ", "hourly_rate": "$16", "total": "$800" },
+
+      { "id": "telegram_mini_app_header", "type": "category", "title": "prices.telegram_mini_app_header.title" },
+      { "id": "telegram_mini_app_1", "type": "price_item", "icon": "/assets/icons/telegram.png", "title": "prices.telegram_mini_app_1.title", "hours": "50 ", "hourly_rate": "$21", "total": "$1,050" },
+      { "id": "telegram_mini_app_2", "type": "price_item", "icon": "/assets/icons/telegram.png", "title": "prices.telegram_mini_app_2.title", "hours": "100 ", "hourly_rate": "$19", "total": "$1,900" },
+
+      { "id": "devops_header", "type": "category", "title": "prices.devops_header.title" },
+      { "id": "devops_1", "type": "price_item", "icon": "/assets/icons/docker.png", "title": "prices.devops_1.title", "hours": "20 ", "hourly_rate": "$23", "total": "$460" },
+      { "id": "devops_2", "type": "price_item", "icon": "/assets/icons/docker.png", "title": "prices.devops_2.title", "hours": "50 ", "hourly_rate": "$21", "total": "$1,050" },
+
+      { "id": "security_header", "type": "category", "title": "prices.security_header.title" },
+      { "id": "security_1", "type": "price_item", "icon": "/assets/icons/arch.png", "title": "prices.security_1.title", "hours": "20 ", "hourly_rate": "$25", "total": "$500" },
+      { "id": "security_2", "type": "price_item", "icon": "/assets/icons/arch.png", "title": "prices.security_2.title", "hours": "50 ", "hourly_rate": "$23", "total": "$1,150" },
+
+      { "id": "smart_contracts_header", "type": "category", "title": "prices.smart_contracts_header.title" },
+      { "id": "smart_contracts_1", "type": "price_item", "icon": "/assets/icons/eth.png", "title": "prices.smart_contracts_1.title", "hours": "30 ", "hourly_rate": "$26", "total": "$780" },
+      { "id": "smart_contracts_2", "type": "price_item", "icon": "/assets/icons/eth.png", "title": "prices.smart_contracts_2.title", "hours": "80 ", "hourly_rate": "$24", "total": "$1,920" },
+
+      { "id": "datascience_header", "type": "category", "title": "prices.datascience_header.title" },
+      { "id": "datascience_1", "type": "price_item", "icon": "/assets/icons/tensorflow.png", "title": "prices.datascience_1.title", "hours": "40 ", "hourly_rate": "$25", "total": "$1,000" },
+      { "id": "datascience_2", "type": "price_item", "icon": "/assets/icons/tensorflow.png", "title": "prices.datascience_2.title", "hours": "100 ", "hourly_rate": "$22", "total": "$2,200" }
     ]
   },
   "contacts": {
@@ -243,36 +325,36 @@
         "id": "github",
         "icon": "/assets/icons/github32.png",
         "type": "link",
-        "title": "contacts.github",
-        "url": "https://github.com/yourusername"
+        "title": "Cozy GitHub",
+        "url": "https://github.com/okoloboga"
       },
       {
         "id": "vk",
         "icon": "/assets/icons/vk32.png",
         "type": "link",
-        "title": "contacts.vk",
-        "url": "https://vk.com/yourusername"
+        "title": "AKA Vkontakte",
+        "url": "https://vk.com/okolo_boga"
       },
       {
         "id": "telegram",
         "icon": "/assets/icons/telegram32.png",
         "type": "link",
-        "title": "contacts.telegram",
-        "url": "https://t.me/yourusername"
+        "title": "Telegram",
+        "url": "https://t.me/okolo_boga"
       },
       {
         "id": "kaggle",
         "icon": "/assets/icons/kaggle32.png",
         "type": "link",
-        "title": "contacts.kaggle",
-        "url": "https://kaggle.com/yourusername"
+        "title": "Artificial Kaggle",
+        "url": "https://kaggle.com/okoloboga"
       },
       {
         "id": "kwork",
         "icon": "/assets/icons/kwork32.png",
         "type": "link",
-        "title": "contacts.kwork",
-        "url": "https://kwork.com/yourusername"
+        "title": "Kwork",
+        "url": "https://kwork.ru/user/okoloboga37"
       }
     ]
   }
