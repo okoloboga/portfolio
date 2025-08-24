@@ -5,6 +5,7 @@
         "id": "bio",
         "icon": "/assets/icons/scroll.png",
         "type": "text",
+        "image": "/assets/me.jpg",
         "title": "about.title",
         "description": "about.description"
       }

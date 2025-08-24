@@ -8,8 +8,12 @@
     <ParallaxLayer :src="header" class="header" :speed="0.8" :zIndex="-1" :scrollWidth="scrollWidth" />
     <PixelCharacter :isWalking="isWalking" :direction="direction" />
     <PixelChest v-for="chest in chests" :key="chest.id" :positionX="chest.positionX" :isOpen="chest.isOpen" :scrollX="scrollX" @open="handleChestOpen(chest)" />
-    <PixelInventory v-if="activeInventory" :items="activeInventory.content.items" @openModal="openModal" @close="closePopups" />
-    <PixelModal v-if="activeModalContent" :content="activeModalContent" @close="closeModal" />
+    
+    <!-- Modals -->
+    <PixelInventory v-if="activeInventory" :items="activeInventory.content.items" @openModal="openL2Modal" @close="closeEverything" />
+    <PixelModal v-if="activeL1ModalContent" :content="activeL1ModalContent" @itemClick="openL2Modal" @close="closeTopModal" />
+    <PixelModal v-if="activeL2ModalContent" :content="activeL2ModalContent" @close="closeL2Modal" />
+
     <button class="arrow" @click="scrollToNextChest"></button>
   </div>
 </template>
@@ -37,29 +41,29 @@ export default {
       isWalking: false,
       direction: 'right',
       chests: [],
-      activeModalContent: null,
       activeInventory: null,
+      activeL1ModalContent: null,
+      activeL2ModalContent: null,
     };
   },
   methods: {
+    // General UI and Navigation
     updateScroll() {
-      this.closePopups();
+      this.closeEverything();
       this.scrollX = this.$refs.container.scrollLeft;
       document.documentElement.style.setProperty('--scrollX', `${this.scrollX}px`);
     },
     handleKeyDown(event) {
-      this.closePopups();
+      this.closeEverything();
       if (!this.$refs.container) return;
       if (event.key === 'ArrowRight') {
         this.isWalking = true;
         this.direction = 'right';
-        const scrollAmount = 15;
-        this.$refs.container.scrollLeft += scrollAmount;
+        this.$refs.container.scrollLeft += 15;
       } else if (event.key === 'ArrowLeft') {
         this.isWalking = true;
         this.direction = 'left';
-        const scrollAmount = 15;
-        this.$refs.container.scrollLeft -= scrollAmount;
+        this.$refs.container.scrollLeft -= 15;
       }
     },
     handleKeyUp(event) {
@@ -68,38 +72,36 @@ export default {
       }
     },
     scrollToNextChest() {
-      // Placeholder for chest scrolling logic
-      const scrollAmount = 500;
-      this.$refs.container.scrollLeft += scrollAmount;
+      this.$refs.container.scrollLeft += 500;
     },
     scrollToSection(chestIndex) {
       if (chestIndex === -1) {
         this.$refs.container.scrollLeft = 0;
         return;
       }
-
       const chest = this.chests[chestIndex];
       if (chest) {
-        const chestPosition = chest.positionX;
-        // We scroll a bit before the chest to make it visible
-        this.$refs.container.scrollLeft = chestPosition / 1.6 - 300;
+        this.$refs.container.scrollLeft = chest.positionX / 1.6 - 300;
       }
     },
-    closeModal() {
-      this.activeModalContent = null;
-    },
+
+    // Modal and Chest Logic
     handleChestOpen(chest) {
-      this.closePopups();
+      this.closeEverything();
       chest.isOpen = true;
       if (chest.type === 'inventory') {
         this.activeInventory = chest;
       } else if (chest.type === 'modal') {
-        this.activeModalContent = { chestId: chest.id, ...chest.content.items[0] };
+        this.activeL1ModalContent = { chestId: chest.id, ...chest.content.items[0] };
+      } else if (chest.type === 'list') {
+        this.activeL1ModalContent = { chestId: chest.id, ...chest.content };
       }
     },
-    openModal(item) {
-      this.activeModalContent = item;
-      // We don't close the inventory here anymore, closePopups handles it
+    openL2Modal(item) {
+      this.activeL2ModalContent = { ...item, parentChestId: this.activeL1ModalContent?.chestId || this.activeInventory?.id };
+    },
+    closeL2Modal() {
+      this.activeL2ModalContent = null;
     },
     closeInventory() {
       if (this.activeInventory) {
@@ -107,54 +109,46 @@ export default {
         this.activeInventory = null;
       }
     },
-    closePopups() {
+    closeEverything() {
       this.closeInventory();
-      if (this.activeModalContent) {
-        // Find which chest was opened for this modal and close it
-        const chestToClose = this.chests.find(c => c.id === this.activeModalContent.chestId);
+      this.activeL2ModalContent = null;
+      if (this.activeL1ModalContent) {
+        const chestToClose = this.chests.find(c => c.id === this.activeL1ModalContent.chestId);
         if (chestToClose) {
           chestToClose.isOpen = false;
         }
-        this.activeModalContent = null;
+        this.activeL1ModalContent = null;
+      }
+    },
+    closeTopModal() {
+      if (this.activeInventory) {
+        this.activeL1ModalContent = null;
+      } else {
+        this.closeEverything();
       }
     },
   },
   created() {
-    const pattern = [
-      '/assets/backgrounds/field.png',
-      '/assets/backgrounds/field.png',
-      '/assets/backgrounds/field.png',
-      '/assets/backgrounds/forest-1.png',
-      '/assets/backgrounds/forest-1.png',
-      '/assets/backgrounds/forest-1.png',
-    ];
-    const repetitions = Math.ceil(this.scrollWidth / (pattern.length * 1920)); // Assuming 1920px width per image
-    this.fieldAndForestPattern = Array.from({ length: repetitions }, () => pattern).flat();
+    // Background patterns
+    const fieldPattern = ['/assets/backgrounds/field.png', '/assets/backgrounds/field.png', '/assets/backgrounds/field.png', '/assets/backgrounds/forest-1.png', '/assets/backgrounds/forest-1.png', '/assets/backgrounds/forest-1.png'];
+    const fieldRepetitions = Math.ceil(this.scrollWidth / (fieldPattern.length * 1920));
+    this.fieldAndForestPattern = Array.from({ length: fieldRepetitions }, () => fieldPattern).flat();
 
-    const mountainsPattern = [
-      '/assets/backgrounds/mountains_ob.png',
-      ...Array(7).fill('/assets/backgrounds/mountains.png'),
-    ];
+    const mountainsPattern = ['/assets/backgrounds/mountains_ob.png', ...Array(7).fill('/assets/backgrounds/mountains.png')];
     const mountainRepetitions = Math.ceil(this.scrollWidth / (mountainsPattern.length * 1920));
     this.mountainsPattern = Array.from({ length: mountainRepetitions }, () => mountainsPattern).flat();
 
-    // Create an array of sections that includes their ID
-    const chestSections = Object.keys(content).map(key => ({
-      id: key,
-      ...content[key]
+    // Chests initialization
+    const chestSections = Object.keys(content).map(key => ({ id: key, ...content[key] }));
+    const chestTypes = ['modal', 'list', 'inventory', 'modal', 'modal']; // About, Stack, Projects, Price, Contact
+    
+    this.chests = chestSections.map((section, i) => ({
+      id: i,
+      positionX: 2000 * (i + 1),
+      content: section,
+      isOpen: false,
+      type: chestTypes[i],
     }));
-
-    // Initialize chests
-    const chestTypes = ['modal', 'inventory', 'inventory', 'modal', 'modal']; // 1,4,5=modal; 2,3=inventory
-    for (let i = 0; i < 5; i++) {
-      this.chests.push({ 
-        id: i, 
-        positionX: 2000 * (i + 1), 
-        content: chestSections[i], 
-        isOpen: false, 
-        type: chestTypes[i] 
-      });
-    }
   },
   mounted() {
     this.boundHandleKeyDown = this.handleKeyDown.bind(this);
