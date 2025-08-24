@@ -34,14 +34,6 @@ export default {
         <img v-for="src in content.screenshots" :key="src" :src="src" />
       </div>
 
-      <!-- List Type -->
-      <div v-else-if="content.type === 'list'" class="list-container">
-        <div v-for="item in content.items" :key="item.id" class="list-item" @click="$emit('itemClick', item)">
-          <img :src="item.icon" class="list-item-icon" />
-          <span class="list-item-title">{{ t(item.title) }}</span>
-        </div>
-      </div>
-
       <!-- Text/Default Type -->
       <div v-else class="text">
         <h2>{{ t(`${content.id}.title`) }}</h2>
@@ -123,31 +115,5 @@ export default {
   max-width: 400px;
   height: auto;
   image-rendering: pixelated;
-}
-
-/* List Type */
-.list-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.list-item {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  padding: 8px;
-  transition: background-color 0.2s;
-}
-.list-item:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-.list-item-icon {
-  width: 32px;
-  height: 32px;
-  margin-right: 15px;
-  image-rendering: pixelated;
-}
-.list-item-title {
-  font-size: 22px;
 }
 </style>
