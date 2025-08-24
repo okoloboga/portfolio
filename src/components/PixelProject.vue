@@ -1,10 +1,20 @@
 <script>
 import { useI18n } from 'vue-i18n';
+import ImageGallery from './ImageGallery.vue';
 
 export default {
   name: 'PixelProject',
+  components: {
+    ImageGallery,
+  },
   props: {
     content: Object, // Expects a single project item
+  },
+  data() {
+    return {
+      isGalleryOpen: false,
+      galleryInitialIndex: 0,
+    };
   },
   setup() {
     const { t } = useI18n();
@@ -15,25 +25,42 @@ export default {
       return '/assets/windows/96x96_split.png';
     },
   },
+  methods: {
+    openGallery(index) {
+      this.galleryInitialIndex = index;
+      this.isGalleryOpen = true;
+    },
+    closeGallery() {
+      this.isGalleryOpen = false;
+    },
+  },
 };
 </script>
 
 <template>
-  <div class="project-modal">
-    <img class="frame" :src="frameSrc" />
-    <div class="content">
-      <div class="text-content">
-        <h2>{{ t(`${content.id}.title`) }}</h2>
-        <p>{{ t(`${content.id}.description`) }}</p>
-        <div class="links">
-          <a v-for="link in content.links" :key="link.url" :href="link.url" target="_blank">{{ t(link.label) }}</a>
+  <div>
+    <div class="project-modal">
+      <img class="frame" :src="frameSrc" />
+      <div class="content">
+        <div class="text-content">
+          <h2>{{ t(`${content.id}.title`) }}</h2>
+          <p>{{ t(`${content.id}.description`) }}</p>
+          <div class="links">
+            <a v-for="link in content.links" :key="link.url" :href="link.url" target="_blank">{{ t(link.label) }}</a>
+          </div>
         </div>
+        <div class="media-content">
+          <img v-for="(screenshot, index) in content.screenshots" :key="index" :src="screenshot" @click="openGallery(index)" style="cursor: pointer;" />
+        </div>
+        <div class="close" @click="$emit('close')"></div>
       </div>
-      <div class="media-content">
-        <img v-for="(screenshot, index) in content.screenshots" :key="index" :src="screenshot" />
-      </div>
-      <div class="close" @click="$emit('close')"></div>
     </div>
+    <ImageGallery
+      v-if="isGalleryOpen"
+      :images="content.screenshots"
+      :initial-index="galleryInitialIndex"
+      @close="closeGallery"
+    />
   </div>
 </template>
 
@@ -58,7 +85,7 @@ export default {
 }
 .content {
   position: relative;
-  padding: 70px;
+  padding: 80px;
   height: 100%;
   box-sizing: border-box;
   display: grid;
@@ -79,7 +106,6 @@ export default {
 }
 
 .text-content {
-  text-align: left;
   white-space: normal;
   overflow-y: auto;
   max-height: 100%;
@@ -102,7 +128,8 @@ export default {
 .media-content img {
   width: 100%;
   height: auto;
-  image-rendering: pixelated;
+  image-rendering: auto; /* Changed from pixelated */
+  cursor: pointer; /* Add cursor pointer */
 }
 
 .links {
