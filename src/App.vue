@@ -14,6 +14,7 @@
     <!-- UI Modals -->
     <PixelInventory v-if="activeInventory" :content="activeInventory.content" @openModal="openL2Modal" @close="closeEverything" />
     <PixelStack v-if="activeStackContent" :content="activeStackContent.content" @itemClick="openL2Modal" @close="closeEverything" />
+    <PixelProject v-if="activeProjectContent" :content="activeProjectContent.content" @close="closeEverything" />
     <PixelModal v-if="activeModalContent" :content="activeModalContent" @close="closeEverything" />
     <PixelModal v-if="activeL2ModalContent" :content="activeL2ModalContent" @close="closeL2Modal" />
 
@@ -28,12 +29,13 @@ import PixelChest from './components/PixelChest.vue';
 import PixelModal from './components/PixelModal.vue';
 import PixelInventory from './components/PixelInventory.vue';
 import PixelHeader from './components/PixelHeader.vue';
-import PixelStack from './components/PixelStack.vue'; // Import new component
+import PixelStack from './components/PixelStack.vue';
+import PixelProject from './components/PixelProject.vue';
 import content from './data/content.json';
 import { FONT_SIZES } from './styles/typography.js';
 
 export default {
-  components: { ParallaxLayer, PixelCharacter, PixelChest, PixelModal, PixelInventory, PixelHeader, PixelStack },
+  components: { ParallaxLayer, PixelCharacter, PixelChest, PixelModal, PixelInventory, PixelHeader, PixelStack, PixelProject },
   data() {
     return {
       sky: '/assets/backgrounds/sky.png',
@@ -47,9 +49,10 @@ export default {
       direction: 'right',
       chests: [],
       activeInventory: null,
-      activeStackContent: null, // New state for the stack list
-      activeModalContent: null, // For simple L1 modals
-      activeL2ModalContent: null, // For detail modals
+      activeStackContent: null,
+      activeProjectContent: null,
+      activeModalContent: null,
+      activeL2ModalContent: null,
     };
   },
   methods: {
@@ -83,7 +86,7 @@ export default {
     },
     scrollToSection(chestIndex) {
       if (chestIndex === -1) {
-        this.$refs.container.scrollLeft = 0;
+        this.scrollLeft = 0;
         return;
       }
       const chest = this.chests[chestIndex];
@@ -103,6 +106,9 @@ export default {
         case 'list':
           this.activeStackContent = chest;
           break;
+        case 'project_list':
+          this.activeProjectContent = chest;
+          break;
         case 'modal':
           this.activeModalContent = { ...chest.content.items[0], chestId: chest.id };
           break;
@@ -117,12 +123,14 @@ export default {
     closeEverything() {
       if (this.activeInventory) this.activeInventory.isOpen = false;
       if (this.activeStackContent) this.activeStackContent.isOpen = false;
+      if (this.activeProjectContent) this.activeProjectContent.isOpen = false;
       if (this.activeModalContent) {
         const chestToClose = this.chests.find(c => c.id === this.activeModalContent.chestId);
         if (chestToClose) chestToClose.isOpen = false;
       }
       this.activeInventory = null;
       this.activeStackContent = null;
+      this.activeProjectContent = null;
       this.activeModalContent = null;
       this.activeL2ModalContent = null; // Also close L2 modals on major actions
     },
@@ -138,7 +146,7 @@ export default {
 
     // --- Chests Initialization ---
     const chestSections = Object.keys(content).map(key => ({ id: key, ...content[key] }));
-    const chestTypes = ['modal', 'list', 'inventory', 'modal', 'modal']; // Matched to content.json order
+    const chestTypes = ['modal', 'list', 'project_list', 'modal', 'modal']; // Matched to content.json order
     
     this.chests = chestSections.map((section, i) => ({
       id: i,

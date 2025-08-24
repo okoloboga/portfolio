@@ -102,9 +102,9 @@ export default {
   background-color: rgba(255, 255, 255, 0.1);
 }
 .list-item-icon {
-  width: 32px;
-  height: 32px;
-  margin-right: 15px;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
   image-rendering: pixelated;
 }
 .list-item-title {

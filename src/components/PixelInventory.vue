@@ -23,8 +23,8 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 384px;
-  height: 384px;
+  width: 420px;
+  height: 420px;
   display: grid;
   grid-template: repeat(5, 64px) / repeat(5, 64px);
   gap: 4px;
