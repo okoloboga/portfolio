@@ -22,11 +22,11 @@ export default {
   <div class="stack-modal">
     <img class="frame" :src="frameSrc" />
     <div class="content">
-      <h2>{{ t('stack.title') }}</h2>
+      <h2>{{ t('nav.stack') }}</h2>
       <div class="list-container">
         <div v-for="item in content.items" :key="item.id" class="list-item" @click="$emit('itemClick', item)">
           <img :src="item.icon" class="list-item-icon" />
-          <span class="list-item-title">{{ t(item.title) }}</span>
+          <span class="list-item-title">{{ t(`${item.id}.title`) }}</span>
         </div>
       </div>
       <div class="close" @click="$emit('close')"></div>
