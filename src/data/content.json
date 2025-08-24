@@ -161,121 +161,146 @@
           { "label": "Live", "url": "https://t.me/Svaraprobot" }
         ],
         "screenshots": [
-          "/assets/portfilio/1.jpg",
-          "/assets/portfolio/2.jpg",
-          "/assets/portfilio/3.jpg",
-          "/assets/portfolio/4.jpg",
-          "/assets/portfilio/5.jpg",
-          "/assets/portfolio/6.jpg",
-          "/assets/portfilio/7.jpg",
-          "/assets/portfolio/8.jpg",
-          "/assets/portfilio/9.jpg"
+          "/assets/portfolio/svara/1.jpg",
+          "/assets/portfolio/svara/2.jpg",
+          "/assets/portfolio/svara/3.jpg",
+          "/assets/portfolio/svara/4.jpg",
+          "/assets/portfolio/svara/5.jpg",
+          "/assets/portfolio/svara/6.jpg",
+          "/assets/portfolio/svara/7.jpg",
+          "/assets/portfolio/svara/8.jpg",
+          "/assets/portfolio/svara/9.jpg"
         ]
       },
       {
-        "id": "telegram_bot",
+        "id": "trader",
         "icon": "/assets/icons/scroll4.png",
         "type": "project",
-        "title": "projects.telegram_bot",
-        "description": "projects.telegram_bot_desc",
+        "title": "projects.trader",
+        "description": "projects.trader_desc",
         "links": [
           { "label": "GitHub", "url": "https://github.com/yourusername/telegram-bot" },
           { "label": "Live", "url": "https://t.me/yourbot" }
         ],
         "screenshots": [
-          "/assets/screenshots/bot1.png",
-          "/assets/screenshots/bot2.png"
+          "/assets/portfolio/trader/3.jpg",
+          "/assets/portfolio/trader/2.jpg",
+          "/assets/portfolio/trader/1.jpg",
+          "/assets/portfolio/trader/4.jpg",
+          "/assets/portfolio/trader/5.jpg"
         ]
       },
-
       {
-        "id": "website",
+        "id": "caller",
         "icon": "/assets/icons/scroll1.png",
         "type": "project",
-        "title": "projects.website",
-        "description": "projects.website_desc",
+        "title": "projects.caller",
+        "description": "projects.caller_desc",
         "links": [
           { "label": "GitHub", "url": "https://github.com/yourusername/website" },
           { "label": "Live", "url": "https://yourwebsite.com" }
         ],
         "screenshots": [
-          "/assets/screenshots/site1.png",
-          "/assets/screenshots/site2.png"
+          "/assets/portfolio/caller/1.jpg",
+          "/assets/portfolio/caller/2.jpg",
+          "/assets/portfolio/caller/3.jpg",
+          "/assets/portfolio/caller/4.jpg"
         ]
       },
       {
-        "id": "landing",
+        "id": "ruble",
         "icon": "/assets/icons/scroll2.png",
         "type": "project",
-        "title": "projects.landing",
-        "description": "projects.landing_desc",
+        "title": "projects.ruble",
+        "description": "projects.ruble_desc",
         "links": [
           { "label": "GitHub", "url": "https://github.com/yourusername/landing" },
           { "label": "Live", "url": "https://yourlanding.com" }
         ],
         "screenshots": [
-          "/assets/screenshots/landing1.png",
-          "/assets/screenshots/landing2.png"
+          "/assets/portfolio/ruble/1.png",
+          "/assets/portfolio/ruble/2.png",
+          "/assets/portfolio/ruble/3.png",
+          "/assets/portfolio/ruble/4.png",
+          "/assets/portfolio/ruble/5.png"
         ]
       },
       {
-        "id": "telegram_app",
+        "id": "neuro",
         "icon": "/assets/icons/book2.png",
         "type": "project",
-        "title": "projects.telegram_app",
-        "description": "projects.telegram_app_desc",
+        "title": "projects.neuro",
+        "description": "projects.neuro_desc",
         "links": [
           { "label": "GitHub", "url": "https://github.com/yourusername/telegram-app" },
           { "label": "Live", "url": "https://t.me/yourapp" }
         ],
         "screenshots": [
-          "/assets/screenshots/app1.png",
-          "/assets/screenshots/app2.png"
+          "/assets/portfolio/neuro/1.jpg",
+          "/assets/portfolio/neuro/2.jpg",
+          "/assets/portfolio/neuro/3.jpg",
+          "/assets/portfolio/neuro/4.jpg",
+          "/assets/portfolio/neuro/5.jpg",
+          "/assets/portfolio/neuro/6.jpg",
+          "/assets/portfolio/neuro/7.jpg",
+          "/assets/portfolio/neuro/8.jpg"
         ]
       },
       {
-        "id": "website",
+        "id": "jesko",
         "icon": "/assets/icons/scroll1.png",
         "type": "project",
-        "title": "projects.website",
-        "description": "projects.website_desc",
+        "title": "projects.jesko",
+        "description": "projects.jesko_desc",
         "links": [
           { "label": "GitHub", "url": "https://github.com/yourusername/website" },
           { "label": "Live", "url": "https://yourwebsite.com" }
         ],
         "screenshots": [
-          "/assets/screenshots/site1.png",
-          "/assets/screenshots/site2.png"
+          "/assets/portfolio/jesko/1.jpg",
+          "/assets/portfolio/jesko/2.jpg",
+          "/assets/portfolio/jesko/3.jpg",
+          "/assets/portfolio/jesko/4.jpg",
+          "/assets/portfolio/jesko/5.jpg",
+          "/assets/portfolio/jesko/6.jpg",
+          "/assets/portfolio/jesko/7.jpg"
         ]
       },
       {
-        "id": "landing",
+        "id": "mori",
         "icon": "/assets/icons/scroll2.png",
         "type": "project",
-        "title": "projects.landing",
-        "description": "projects.landing_desc",
+        "title": "projects.mori",
+        "description": "projects.mori_desc",
         "links": [
           { "label": "GitHub", "url": "https://github.com/yourusername/landing" },
           { "label": "Live", "url": "https://yourlanding.com" }
         ],
         "screenshots": [
-          "/assets/screenshots/landing1.png",
-          "/assets/screenshots/landing2.png"
+          "/assets/portfolio/mori/1.png",
+          "/assets/portfolio/mori/2.png"
         ]
       },
       {
-        "id": "telegram_app",
+        "id": "style",
         "icon": "/assets/icons/book2.png",
         "type": "project",
-        "title": "projects.telegram_app",
-        "description": "projects.telegram_app_desc",
+        "title": "projects.style",
+        "description": "projects.style_desc",
         "links": [
           { "label": "GitHub", "url": "https://github.com/yourusername/telegram-app" },
           { "label": "Live", "url": "https://t.me/yourapp" }
         ],
         "screenshots": [
-          "/assets/screenshots/app1.png",
-          "/assets/screenshots/app2.png"
+          "/assets/portfolio/style/1.png",
+          "/assets/portfolio/style/2.png",
+          "/assets/portfolio/style/3.png",
+          "/assets/portfolio/style/4.png",
+          "/assets/portfolio/style/5.png",
+          "/assets/portfolio/style/6.png",
+          "/assets/portfolio/style/7.png",
+          "/assets/portfolio/style/8.png",
+          "/assets/portfolio/style/9.png"
         ]
       }
     ]

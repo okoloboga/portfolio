@@ -107,7 +107,7 @@
     "title": "Jesko VPN",
     "description": "Designed and launched a comprehensive Telegram bot for selling VPN access via Outline. The system automatically generates and configures VPN keys for various devices and countries. Implemented multi-currency payments (including crypto), a referral program, subscription giveaways, and a powerful admin panel for user and financial management built on FastAPI and PostgreSQL."
   },
-  "neurobot": {
+  "neuro": {
     "title": "NeuronAgent",
     "description": "Created a multifunctional Telegram bot for interacting with OpenAI and Midjourney AI models. The bot communicates via voice messages (speech-to-text and text-to-speech), generates images from prompts, and operates on a subscription model. Implemented a referral system and an admin panel for analytics and content management."
   },
