@@ -30,6 +30,7 @@ import PixelInventory from './components/PixelInventory.vue';
 import PixelHeader from './components/PixelHeader.vue';
 import PixelStack from './components/PixelStack.vue'; // Import new component
 import content from './data/content.json';
+import { FONT_SIZES } from './styles/typography.js';
 
 export default {
   components: { ParallaxLayer, PixelCharacter, PixelChest, PixelModal, PixelInventory, PixelHeader, PixelStack },
@@ -152,6 +153,12 @@ export default {
     this.boundHandleKeyUp = this.handleKeyUp.bind(this);
     window.addEventListener('keydown', this.boundHandleKeyDown);
     window.addEventListener('keyup', this.boundHandleKeyUp);
+
+    // Set font size CSS variables
+    for (const [key, value] of Object.entries(FONT_SIZES)) {
+      const cssVarName = `--font-size-${key.toLowerCase().replace(/_/g, '-')}`;
+      document.documentElement.style.setProperty(cssVarName, value);
+    }
   },
   beforeUnmount() {
     window.removeEventListener('keydown', this.boundHandleKeyDown);

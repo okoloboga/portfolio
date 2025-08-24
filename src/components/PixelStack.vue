@@ -66,7 +66,7 @@ export default {
   flex-direction: column;
 }
 .content h2 {
-  font-size: 24px;
+  font-size: var(--font-size-large-title);
   margin-top: 0;
   margin-bottom: 20px;
   flex-shrink: 0;
@@ -108,6 +108,6 @@ export default {
   image-rendering: pixelated;
 }
 .list-item-title {
-  font-size: 22px;
+  font-size: var(--font-size-medium-title);
 }
 </style>

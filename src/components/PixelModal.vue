@@ -90,10 +90,10 @@ export default {
   white-space: normal;
 }
 .text h2 {
-  font-size: 24px;
+  font-size: var(--font-size-large-title);
 }
 .text p {
-  font-size: 20px;
+  font-size: var(--font-size-body);
 }
 .modal-image {
   width: 100px;

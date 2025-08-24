@@ -62,7 +62,7 @@ export default {
   color: white;
   padding: 15px 0;
   font-family: 'VT323', monospace;
-  font-size: 24px;
+  font-size: var(--font-size-large-title);
   cursor: pointer;
   transition: transform 0.2s ease;
 }
