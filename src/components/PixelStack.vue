@@ -60,14 +60,16 @@ export default {
 .content {
   position: relative;
   padding: 40px;
-  overflow-y: auto;
   max-height: calc(80vh - 80px);
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 .content h2 {
   font-size: 24px;
   margin-top: 0;
   margin-bottom: 20px;
+  flex-shrink: 0;
 }
 .close {
   position: absolute;
@@ -86,6 +88,8 @@ export default {
   flex-direction: column;
   gap: 10px;
   text-align: left;
+  overflow-y: auto;
+  flex-grow: 1;
 }
 .list-item {
   display: flex;
