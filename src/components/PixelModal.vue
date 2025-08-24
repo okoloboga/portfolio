@@ -88,6 +88,7 @@ export default {
 .text {
   text-align: center;
   white-space: normal;
+  width: 100%;
 }
 .text h2 {
   font-size: var(--font-size-large-title);
@@ -101,8 +102,6 @@ export default {
   border-radius: 50%;
   object-fit: cover;
   image-rendering: auto;
-  margin-top: 15px;
-  margin-bottom: 15px;
 }
 
 /* Project Type */
